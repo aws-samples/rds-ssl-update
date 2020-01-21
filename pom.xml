@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.amazonaws</groupId>
+  <artifactId>RDSCertificateUpdate</artifactId>
+  
+  <version>1.0.0</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk</artifactId>
+      <version>1.11.256</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+  <build>
+  <plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+            <archive>
+               <!-- manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile -->
+			   <manifest>
+		<addClasspath>true</addClasspath>
+		<mainClass>com.amazonaws.rdscaupdate.RDSCAUpdate</mainClass>
+		<classpathPrefix>dependency/</classpathPrefix>
+	    </manifest>
+            </archive>
+         </configuration>
+     </plugin>
+    </plugins>
+    </build>
+</project>
